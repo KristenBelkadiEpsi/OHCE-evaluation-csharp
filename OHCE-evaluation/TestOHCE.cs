@@ -33,5 +33,14 @@ namespace OHCE_evaluation
             //ALORS « Bonjour » est envoyé avant toute réponse
             Assert.StartsWith("Bonjour", chaineMirroir);
         }
+        [Fact(DisplayName = "QUAND on saisit une chaîne ALORS « Au revoir » est envoyé en dernier")]
+        public void TestChaineAuRevoir()
+        {
+            OHCE ohce = new OHCE();
+            //QUAND on saisit une chaîne
+            string chaineMirroir = ohce.Mirroir("une chaine d'entrée");
+            //ALORS « Au revoir » est envoyé en dernier
+            Assert.EndsWith("Au revoir", chaineMirroir);
+        }
     }
 }
