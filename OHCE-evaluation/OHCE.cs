@@ -14,11 +14,11 @@ namespace OHCE_evaluation
             string chaineMirroir = new string(chaine.Reverse().ToArray());
             if (chaine == chaineMirroir)
             {
-                return chaineMirroir + "Bien dit";
+                return "Bonjour" + chaineMirroir + "Bien dit";
             }
             else
             {
-                return chaineMirroir;
+                return "Bonjour" + chaineMirroir;
             }
         }
 
