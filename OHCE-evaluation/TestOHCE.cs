@@ -24,5 +24,14 @@ namespace OHCE_evaluation
 
 
         }
+        [Fact(DisplayName = "QUAND on saisit une chaîne ALORS « Bonjour » est envoyé avant toute réponse")]
+        public void TestChaineBonjour()
+        {
+            OHCE ohce = new OHCE();
+            //QUAND on saisit une chaîne
+            string chaineMirroir = ohce.Mirroir("une chaine d'entrée");
+            //ALORS « Bonjour » est envoyé avant toute réponse
+            Assert.StartsWith("Bonjour", chaineMirroir);
+        }
     }
 }
