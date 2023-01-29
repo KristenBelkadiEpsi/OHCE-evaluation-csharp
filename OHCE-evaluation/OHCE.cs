@@ -11,9 +11,15 @@ namespace OHCE_evaluation
 
         public string Mirroir(string chaine)
         {
-            char[] charArray = chaine.ToCharArray();
-            Array.Reverse(charArray);
-            return new string(charArray);
+            string chaineMirroir = new string(chaine.Reverse().ToArray());
+            if (chaine == chaineMirroir)
+            {
+                return chaineMirroir + "Bien dit";
+            }
+            else
+            {
+                return chaineMirroir;
+            }
         }
 
 
