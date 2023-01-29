@@ -8,5 +8,14 @@ namespace OHCE_evaluation
 {
     internal class OHCE
     {
+
+        public string Mirroir(string chaine)
+        {
+            char[] charArray = chaine.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+
+
     }
 }
