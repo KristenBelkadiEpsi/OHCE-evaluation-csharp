@@ -42,5 +42,18 @@ namespace OHCE_evaluation
             //ALORS « Au revoir » est envoyé en dernier
             Assert.EndsWith("Au revoir", chaineMirroir);
         }
+        [Fact(DisplayName = "ETANT DONNE un utilisateur parlant une langue QUAND on entre un palindrome ALORS il est renvoyé ET le <bienDit> de cette langue est envoyé")]
+        public void TestChainePalindromeLangue()
+        {
+            OHCE ohce = new OHCE();
+            //ETANT DONNE un utilisateur parlant une langue
+            string langue = "en";
+            //QUAND on entre un palindrome
+            string chaineMirroir = ohce.Mirroir("kayak", langue);
+            //ALORS il est renvoyé ET le <bienDit> de cette langue est envoyé
+            Assert.Contains("kayak", chaineMirroir);
+            Assert.Contains("Well said", chaineMirroir);
+        }
+
     }
 }
