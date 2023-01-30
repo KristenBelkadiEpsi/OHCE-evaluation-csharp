@@ -47,9 +47,8 @@ namespace OHCE_evaluation
         {
             OHCE ohce = new OHCE();
             //ETANT DONNE un utilisateur parlant une langue
-            string langue = "en";
             //QUAND on entre un palindrome
-            string chaineMirroir = ohce.Mirroir("kayak", langue);
+            string chaineMirroir = ohce.Mirroir("kayak", Langue.En);
             //ALORS il est renvoyé ET le <bienDit> de cette langue est envoyé
             Assert.Contains("kayak", chaineMirroir);
             Assert.Contains("Well said", chaineMirroir);
