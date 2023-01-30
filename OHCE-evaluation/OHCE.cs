@@ -25,27 +25,31 @@ namespace OHCE_evaluation
         public string Mirroir(string chaine, Langue langue)
         {
             string bienDit;
+            string bonjour;
             string chaineMirroir = new string(chaine.Reverse().ToArray());
             switch (langue)
             {
                 case Langue.Fr:
                     bienDit = "Bien dit";
+                    bonjour = "Bonjour";
                     break;
                 case Langue.En:
                     bienDit = "Well said";
+                    bonjour = "Hello";
                     break;
                 default:
                     bienDit = "Bien dit";
+                    bonjour = "Bonjour";
                     break;
 
             }
             if (chaineMirroir == chaine)
             {
-                return "Bonjour " + chaineMirroir + " " + bienDit + " " + "Au revoir";
+                return bonjour + " " + chaineMirroir + " " + bienDit + " " + "Au revoir";
             }
             else
             {
-                return "Bonjour " + chaineMirroir + " " + "Au revoir";
+                return bonjour + " " + chaineMirroir + " " + "Au revoir";
             }
 
 
