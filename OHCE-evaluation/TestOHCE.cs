@@ -63,6 +63,16 @@ namespace OHCE_evaluation
             //ALORS <bonjour> de cette langue est envoyé avant tout
             Assert.StartsWith("Hello", chaineMirroir);
         }
+        [Fact(DisplayName = "ETANT DONNE un utilisateur parlant une langue QUAND on saisit une chaîne ALORS <auRevoir> dans cette langue est envoyé en dernier")]
+        public void TestChaineAuRevoirLangue()
+        {
+            OHCE ohce = new OHCE();
+            //ETANT DONNE un utilisateur parlant une langue
+            //QUAND on saisit une chaîne
+            string chaineMirroir = ohce.Mirroir("une chaine d'entrée", Langue.En);
+            //ALORS <auRevoir> dans cette langue est envoyé en dernier
+            Assert.EndsWith("Goodbye", chaineMirroir);
+        }
 
     }
 }
