@@ -53,6 +53,16 @@ namespace OHCE_evaluation
             Assert.Contains("kayak", chaineMirroir);
             Assert.Contains("Well said", chaineMirroir);
         }
+        [Fact(DisplayName = "ETANT DONNE un utilisateur parlant une langue QUAND on saisit une chaîne ALORS <bonjour> de cette langue est envoyé avant tout")]
+        public void TestChaineBonjourLangue()
+        {
+            OHCE ohce = new OHCE();
+            //ETANT DONNE un utilisateur parlant une langue
+            //QUAND on saisit une chaîne
+            string chaineMirroir = ohce.Mirroir("une chaine d'entrée", Langue.En);
+            //ALORS <bonjour> de cette langue est envoyé avant tout
+            Assert.StartsWith("Hello", chaineMirroir);
+        }
 
     }
 }
