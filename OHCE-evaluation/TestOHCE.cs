@@ -86,6 +86,37 @@ namespace OHCE_evaluation
 
 
         }
+        [Fact(DisplayName = "ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période> QUAND on saisit une chaîne ALORS <salutation> de cette langue à cette période est envoyé avant tout CAS {‘après-midi’, ‘bonjour_pm’}")]
+        public void TestChaineBonjourLanguePeriodeApresMidi()
+        {
+            OHCE ohce = new OHCE();
+            //ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période>
+            //QUAND on saisit une chaîne
+            string chaineMirroir = ohce.Mirroir("une chaine d'entrée", Langue.En, Periode.ApresMidi);
+            //ALORS <salutation> de cette langue à cette période est envoyé avant tout
+            Assert.StartsWith("Good afternoon", chaineMirroir);
+        }
+        [Fact(DisplayName = "ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période> QUAND on saisit une chaîne ALORS <salutation> de cette langue à cette période est envoyé avant tout CAS {‘soir’, ‘bonjour_soir’}")]
+        public void TestChaineBonjourLanguePeriodeSoir()
+        {
+            OHCE ohce = new OHCE();
+            //ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période>
+            //QUAND on saisit une chaîne
+            string chaineMirroir = ohce.Mirroir("une chaine d'entrée", Langue.En, Periode.Soir);
+            //ALORS <salutation> de cette langue à cette période est envoyé avant tout
+            Assert.StartsWith("Good evening", chaineMirroir);
+        }
+        [Fact(DisplayName = "ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période> QUAND on saisit une chaîne ALORS <salutation> de cette langue à cette période est envoyé avant tout CAS {‘nuit’, ‘bonjour_nuit’}")]
+        public void TestChaineBonjourLanguePeriodeNuit()
+        {
+            OHCE ohce = new OHCE();
+            //ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période>
+            //QUAND on saisit une chaîne
+            string chaineMirroir = ohce.Mirroir("une chaine d'entrée", Langue.En, Periode.Nuit);
+            //ALORS <salutation> de cette langue à cette période est envoyé avant tout
+            Assert.StartsWith("Good night", chaineMirroir);
+        }
+
 
     }
 }
