@@ -116,7 +116,16 @@ namespace OHCE_evaluation
             //ALORS <salutation> de cette langue à cette période est envoyé avant tout
             Assert.StartsWith("Good night", chaineMirroir);
         }
-
+        [Fact(DisplayName = "ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période> QUAND on saisit une chaîne ALORS <auRevoir> dans cette langue à cette période est envoyé en dernier CAS {‘matin’, ‘auRevoir_am’}")]
+        public void TestChaineAuRevoirLanguePeriodeMatin()
+        {
+            OHCE ohce = new OHCE();
+            //ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période>
+            //QUAND on saisit une chaîne
+            string chaineMirroir = ohce.Mirroir("une chaine d'entrée", Langue.En, Periode.Matin);
+            //ALORS <auRevoir> dans cette langue à cette période est envoyé en dernier
+            Assert.EndsWith("See you tomorrow", chaineMirroir);
+        }
 
     }
 }
