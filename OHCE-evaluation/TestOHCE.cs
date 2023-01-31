@@ -124,8 +124,37 @@ namespace OHCE_evaluation
             //QUAND on saisit une chaîne
             string chaineMirroir = ohce.Mirroir("une chaine d'entrée", Langue.En, Periode.Matin);
             //ALORS <auRevoir> dans cette langue à cette période est envoyé en dernier
-            Assert.EndsWith("See you tomorrow", chaineMirroir);
+            Assert.EndsWith("Good morning", chaineMirroir);
         }
-
+        [Fact(DisplayName = "ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période> QUAND on saisit une chaîne ALORS <auRevoir> dans cette langue à cette période est envoyé en dernier CAS {‘après-midi’, ‘auRevoir_pm’}")]
+        public void TestChaineAuRevoirLanguePeriodeApresMidi()
+        {
+            OHCE ohce = new OHCE();
+            //ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période>
+            //QUAND on saisit une chaîne
+            string chaineMirroir = ohce.Mirroir("une chaine d'entrée", Langue.En, Periode.ApresMidi);
+            //ALORS <auRevoir> dans cette langue à cette période est envoyé en dernier
+            Assert.EndsWith("Good afternoon", chaineMirroir);
+        }
+        [Fact(DisplayName = "ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période> QUAND on saisit une chaîne ALORS <auRevoir> dans cette langue à cette période est envoyé en dernier CAS {‘soirée’, ‘auRevoir_soir’}")]
+        public void TestChaineAuRevoirLanguePeriodeSoir()
+        {
+            OHCE ohce = new OHCE();
+            //ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période>
+            //QUAND on saisit une chaîne
+            string chaineMirroir = ohce.Mirroir("une chaine d'entrée", Langue.En, Periode.Soir);
+            //ALORS <auRevoir> dans cette langue à cette période est envoyé en dernier
+            Assert.EndsWith("Good evening", chaineMirroir);
+        }
+        [Fact(DisplayName = "ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période> QUAND on saisit une chaîne ALORS <auRevoir> dans cette langue à cette période est envoyé en dernier CAS {‘nuit’, ‘auRevoir_nuit’}")]
+        public void TestChaineAuRevoirLanguePeriodeNuit()
+        {
+            OHCE ohce = new OHCE();
+            //ETANT DONNE un utilisateur parlant une langue ET que la période de la journée est <période>
+            //QUAND on saisit une chaîne
+            string chaineMirroir = ohce.Mirroir("une chaine d'entrée", Langue.En, Periode.Nuit);
+            //ALORS <auRevoir> dans cette langue à cette période est envoyé en dernier
+            Assert.EndsWith("Good night", chaineMirroir);
+        }
     }
 }

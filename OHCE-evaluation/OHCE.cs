@@ -66,6 +66,7 @@ namespace OHCE_evaluation
         public string Mirroir(string chaine, Langue langue, Periode periode)
         {
             string salutationPeriode;
+            string auRevoir;
             switch (langue)
             {
                 case Langue.En:
@@ -74,18 +75,23 @@ namespace OHCE_evaluation
                     {
                         case Periode.Matin:
                             salutationPeriode = "Good morning";
+                            auRevoir = "Good morning";
                             break;
                         case Periode.ApresMidi:
                             salutationPeriode = "Good afternoon";
+                            auRevoir = "Good afternoon";
                             break;
                         case Periode.Soir:
                             salutationPeriode = "Good evening";
+                            auRevoir = "Good evening";
                             break;
                         case Periode.Nuit:
                             salutationPeriode = "Good night";
+                            auRevoir = "Good night";
                             break;
                         default:
                             salutationPeriode = "Good morning";
+                            auRevoir = "Good morning";
                             break;
                     }
                     break;
@@ -94,18 +100,23 @@ namespace OHCE_evaluation
                     {
                         case Periode.Matin:
                             salutationPeriode = "Bonjour";
+                            auRevoir = "Au revoir";
                             break;
                         case Periode.ApresMidi:
                             salutationPeriode = "Bon après-midi";
+                            auRevoir = "Au revoir";
                             break;
                         case Periode.Soir:
                             salutationPeriode = "Bonsoir";
+                            auRevoir = "Au revoir";
                             break;
                         case Periode.Nuit:
                             salutationPeriode = "Bonne nuit";
+                            auRevoir = "Au revoir";
                             break;
                         default:
                             salutationPeriode = "Bonjour";
+                            auRevoir = "Au revoir";
                             break;
                     }
                     break;
@@ -114,40 +125,45 @@ namespace OHCE_evaluation
                     {
                         case Periode.Matin:
                             salutationPeriode = "Bonjour";
+                            auRevoir = "Au revoir";
                             break;
                         case Periode.ApresMidi:
                             salutationPeriode = "Bon après-midi";
+                            auRevoir = "Au revoir";
                             break;
                         case Periode.Soir:
                             salutationPeriode = "Bonsoir";
+                            auRevoir = "Au revoir";
                             break;
                         case Periode.Nuit:
                             salutationPeriode = "Bonne nuit";
+                            auRevoir = "Au revoir";
                             break;
                         default:
                             salutationPeriode = "Bonjour";
+                            auRevoir = "Au revoir";
                             break;
                     }
                     break;
 
             }
             string bienDit;
-            string auRevoir;
+
             string chaineMirroir = new string(chaine.Reverse().ToArray());
             switch (langue)
             {
                 case Langue.Fr:
                     bienDit = "Bien dit";
-                    auRevoir = "Au revoir";
+
                     break;
                 case Langue.En:
                     bienDit = "Well said";
 
-                    auRevoir = "Goodbye";
+
                     break; ;
                 default:
                     bienDit = "Bien dit";
-                    auRevoir = "Au revoir";
+
                     break;
 
             }
